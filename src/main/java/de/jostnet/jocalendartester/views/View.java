@@ -3,6 +3,7 @@ package de.jostnet.jocalendartester.views;
 import java.time.LocalDate;
 
 import org.vaadin.addons.jostnet.jocalendar.JoCalendar;
+import org.vaadin.addons.jostnet.jocalendar.ViewType;
 
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.router.PageTitle;
@@ -17,7 +18,7 @@ public class View extends Div
 
 	public View()
 	{
-		JoCalendar joCalendar = new JoCalendar(LocalDate.now());
+		JoCalendar joCalendar = new JoCalendar(LocalDate.now(), ViewType.MONTH);
 		add(joCalendar);
 
 	}

@@ -1,10 +1,10 @@
 package de.jostnet.jocalendartester;
 
-import com.vaadin.flow.component.dependency.NpmPackage;
-import com.vaadin.flow.component.page.AppShellConfigurator;
-import com.vaadin.flow.theme.Theme;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.vaadin.flow.component.dependency.NpmPackage;
+import com.vaadin.flow.component.page.AppShellConfigurator;
 
 /**
  * The entry point of the Spring Boot application.
@@ -15,12 +15,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @NpmPackage(value = "line-awesome", version = "1.3.0")
-public class Application implements AppShellConfigurator {
+public class Application implements AppShellConfigurator
+{
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-		public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+	public static void main(String[] args)
+	{
+		SpringApplication.run(Application.class, args);
+	}
 
 }
