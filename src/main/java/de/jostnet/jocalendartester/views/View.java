@@ -9,6 +9,8 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
+import de.jostnet.jocalendartester.tools.DummySupplier;
+
 @PageTitle("")
 @Route(value = "")
 public class View extends Div
@@ -18,7 +20,8 @@ public class View extends Div
 
 	public View()
 	{
-		JoCalendar joCalendar = new JoCalendar(LocalDate.now(), ViewType.MONTH);
+		DummySupplier ds = new DummySupplier();
+		JoCalendar joCalendar = new JoCalendar(LocalDate.now(), ViewType.MONTH, ds);
 		add(joCalendar);
 
 	}
