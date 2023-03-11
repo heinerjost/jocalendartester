@@ -2,6 +2,7 @@ package de.jostnet.jocalendartester.views;
 
 import java.time.LocalDate;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.vaadin.addons.jostnet.jocalendar.JoCalendar;
 import org.vaadin.addons.jostnet.jocalendar.ViewType;
 
@@ -9,6 +10,7 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
+import de.jostnet.jocalendartester.data.Session;
 import de.jostnet.jocalendartester.tools.DummySupplier;
 
 @PageTitle("")
@@ -18,9 +20,11 @@ public class View extends Div
 
 	private static final long serialVersionUID = 1L;
 
-	public View()
+	@Autowired
+	private Session session;
+
+	public View(@Autowired DummySupplier ds)
 	{
-		DummySupplier ds = new DummySupplier();
 		JoCalendar joCalendar = new JoCalendar(LocalDate.now(), ViewType.MONTH, ds);
 		add(joCalendar);
 
