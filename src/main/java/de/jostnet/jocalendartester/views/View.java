@@ -10,7 +10,6 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-import de.jostnet.jocalendartester.data.Session;
 import de.jostnet.jocalendartester.tools.DummySupplier;
 
 @PageTitle("")
@@ -20,14 +19,10 @@ public class View extends Div
 
 	private static final long serialVersionUID = 1L;
 
-	@Autowired
-	private Session session;
-
 	public View(@Autowired DummySupplier ds)
 	{
 		JoCalendar joCalendar = new JoCalendar(LocalDate.now(), ViewType.MONTH, ds);
 		add(joCalendar);
-
 	}
 
 }
